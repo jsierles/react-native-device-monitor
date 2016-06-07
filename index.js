@@ -1,7 +1,7 @@
 import React, { Component, PropTypes } from 'react'
 import {
   AppState,
-  DeviceEventEmitter,
+  Keyboard,
   NetInfo,
   View,
 } from 'react-native'
@@ -37,8 +37,8 @@ export default class DeviceMonitor extends Component {
     NetInfo.isConnected.addEventListener('change', this.onConnectivityChange)
     NetInfo.isConnected.fetch().done(this.onConnectivityChange)
 
-    this._keyboardDidHide = DeviceEventEmitter.addListener('keyboardDidHide', () => this.onKeyboard(false))
-    this._keyboardDidShow = DeviceEventEmitter.addListener('keyboardDidShow', (layout) => this.onKeyboard(true, layout))
+    this._keyboardDidHide = Keyboard.addListener('keyboardDidHide', () => this.onKeyboard(false))
+    this._keyboardDidShow = Keyboard.addListener('keyboardDidShow', (layout) => this.onKeyboard(true, layout))
   }
 
   componentWillUnmount() {
