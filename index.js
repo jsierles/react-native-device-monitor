@@ -1,10 +1,11 @@
 import React, { Component, PropTypes } from 'react'
 import {
   AppState,
-  Keyboard,
   NetInfo,
   View,
 } from 'react-native'
+
+import Keyboard from 'Keyboard'
 
 export default class DeviceMonitor extends Component {
 
